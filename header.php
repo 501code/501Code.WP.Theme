@@ -90,7 +90,7 @@ wp_head(); ?>
 				</button>
 
 				<?php
-
+					/*
 					$zerif_logo = get_theme_mod('zerif_logo');
 
 					if(isset($zerif_logo) && $zerif_logo != ""):
@@ -117,9 +117,10 @@ wp_head(); ?>
 
 						echo '</a>';
 
-					endif;
+					endif;*/
 
 				?>
+				<h2 class="logo_text">&lt;/501&gt;</h2>
 
 			</div>
 

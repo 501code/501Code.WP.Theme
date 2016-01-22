@@ -5740,3 +5740,6 @@ body.custom-background {
 .focus-box p{
 	text-align: justify !important;
 }
+.logo_text{
+	padding: 15px;
+}
