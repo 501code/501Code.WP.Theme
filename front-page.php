@@ -315,6 +315,12 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 							endif;
 
+							if(!session('access_token')) {
+								//if logged in show form
+								print '<div style="text-align: center; background: darkgrey; padding: 10px;"><h3>You have to be logged in to submit a project!</h3> <br/><a href="?action=login" class="btn btn-primary green-btn"><i class="fa fa-github"></i> Login/Signup With Github</a></div>';
+
+							} else {
+
 							?>
 
 							<form role="form" method="POST" action="api/account/new_project" class="contact-form">
@@ -358,6 +364,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 								if( !empty($zerif_contactus_button_label) ):
 									echo '<button class="btn btn-primary custom-button red-btn" type="submit" data-scrollreveal="enter left after 0s over 1s">'.$zerif_contactus_button_label.'</button>';
 								endif;
+
 								?>
 
 								<?php
@@ -375,7 +382,9 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 								?>
 
 							</form>
-
+							<?php
+							}
+							?>
 						</div>
 
 						<!-- / END CONTACT FORM-->
