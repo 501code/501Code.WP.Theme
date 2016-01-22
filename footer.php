@@ -14,14 +14,14 @@
 
 	<?php
 		$footer_sections = 0;
-		$zerif_address = get_theme_mod('zerif_address',__('Company address','zerif-lite'));
+		$zerif_address = get_theme_mod('zerif_address',__('Everywhere','zerif-lite'));
 		$zerif_address_icon = get_theme_mod('zerif_address_icon',get_template_directory_uri().'/images/map25-redish.png');
 		
-		$zerif_email = get_theme_mod('zerif_email','<a href="mailto:contact@site.com">contact@site.com</a>');
+		$zerif_email = get_theme_mod('zerif_email','<a href="mailto:info@501code.org">info@501code.org</a>');
 		$zerif_email_icon = get_theme_mod('zerif_email_icon',get_template_directory_uri().'/images/envelope4-green.png');
 		
-		$zerif_phone = get_theme_mod('zerif_phone','<a href="tel:0 332 548 954">0 332 548 954</a>');
-		$zerif_phone_icon = get_theme_mod('zerif_phone_icon',get_template_directory_uri().'/images/telephone65-blue.png');
+		$zerif_phone = get_theme_mod('zerif_phone','<a href="http://twitter.com/501code">http://twitter.com/501code</a>');
+		$zerif_phone_icon = get_theme_mod('zerif_phone_icon',get_template_directory_uri().'/images/twitter.png');
 
 		$zerif_socials_facebook = get_theme_mod('zerif_socials_facebook','#');
 		$zerif_socials_twitter = get_theme_mod('zerif_socials_twitter','#');
@@ -102,32 +102,6 @@
 		!empty($zerif_copyright)):
 		
 					echo '<div class="'.$footer_class.' copyright">';
-					if(!empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble)):
-						echo '<ul class="social">';
-						
-						/* facebook */
-						if( !empty($zerif_socials_facebook) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_facebook).'"><i class="fa fa-facebook"></i></a></li>';
-						endif;
-						/* twitter */
-						if( !empty($zerif_socials_twitter) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_twitter).'"><i class="fa fa-twitter"></i></a></li>';
-						endif;
-						/* linkedin */
-						if( !empty($zerif_socials_linkedin) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_linkedin).'"><i class="fa fa-linkedin"></i></a></li>';
-						endif;
-						/* behance */
-						if( !empty($zerif_socials_behance) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_behance).'"><i class="fa fa-behance"></i></a></li>';
-						endif;
-						/* dribbble */
-						if( !empty($zerif_socials_dribbble) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_dribbble).'"><i class="fa fa-dribbble"></i></a></li>';
-						endif;
-						echo '</ul>';
-					endif;	
-			
 			
 					if( !empty($zerif_copyright) ):
 						echo esc_attr($zerif_copyright);
