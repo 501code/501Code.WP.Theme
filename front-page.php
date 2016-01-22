@@ -254,7 +254,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 						<?php
 
-							$zerif_contactus_title = get_theme_mod('zerif_contactus_title',__('Get in touch','zerif-lite'));
+							$zerif_contactus_title = get_theme_mod('zerif_contactus_title',__('Submit Project','zerif-lite'));
 							if ( !empty($zerif_contactus_title) ):
 								echo '<h2 class="white-text">'.$zerif_contactus_title.'</h2>';
 							endif;
@@ -317,34 +317,44 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 							?>
 
-							<form role="form" method="POST" action="" onSubmit="this.scrollPosition.value=(document.body.scrollTop || document.documentElement.scrollTop)" class="contact-form">
+							<form role="form" method="POST" action="api/account/new_project" class="contact-form">
 
 								<input type="hidden" name="scrollPosition">
 
 								<input type="hidden" name="submitted" id="submitted" value="true" />
 
-								<div class="col-lg-4 col-sm-4 zerif-rtl-contact-name" data-scrollreveal="enter left after 0s over 1s">
+								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-name" data-scrollreveal="enter left after 0s over 1s">
 									<label for="myname" class="screen-reader-text"><?php _e( 'Your Name', 'zerif-lite' ); ?></label>
 									<input required="required" type="text" name="myname" id="myname" placeholder="<?php _e('Your Name','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
 								</div>
 
-								<div class="col-lg-4 col-sm-4 zerif-rtl-contact-email" data-scrollreveal="enter left after 0s over 1s">
+								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-email" data-scrollreveal="enter left after 0s over 1s">
 									<label for="myemail" class="screen-reader-text"><?php _e( 'Your Email', 'zerif-lite' ); ?></label>
-									<input required="required" type="email" name="myemail" id="myemail" placeholder="<?php _e('Your Email','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
+									<input required="required" type="email" name="myemail" id="myemail" placeholder="<?php _e('Your email','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
 								</div>
 
-								<div class="col-lg-4 col-sm-4 zerif-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
-									<label for="mysubject" class="screen-reader-text"><?php _e( 'Subject', 'zerif-lite' ); ?></label>
-									<input required="required" type="text" name="mysubject" id="mysubject" placeholder="<?php _e('Subject','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
+								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
+									<label for="myorganisation" class="screen-reader-text"><?php _e( 'myorganisation', 'zerif-lite' ); ?></label>
+									<input required="required" type="text" name="myorganisation" id="mysubject" placeholder="<?php _e('Name of your organisation','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myorganisation'])) echo esc_attr($_POST['myorganisation']);?>">
+								</div>
+
+								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
+									<label for="mygithub" class="screen-reader-text"><?php _e( 'Github Username', 'zerif-lite' ); ?></label>
+									<input required="required" type="text" name="mygithub" id="mygithub" placeholder="<?php _e('Github username','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['mygithub'])) echo esc_attr($_POST['mygithub']);?>">
+								</div>
+
+								<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">
+									<label for="myproject" class="screen-reader-text"><?php _e( 'Title of your project', 'zerif-lite' ); ?></label>
+									<input required="required" type="text" name="myproject" id="myproject" placeholder="<?php _e('Title of your project','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myproject'])) echo esc_attr($_POST['myproject']);?>">
 								</div>
 
 								<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">
 									<label for="mymessage" class="screen-reader-text"><?php _e( 'Your Message', 'zerif-lite' ); ?></label>
-									<textarea name="mymessage" id="mymessage" class="form-control textarea-box" placeholder="<?php _e('Your Message','zerif-lite'); ?>"><?php if(isset($_POST['mymessage'])) { echo esc_html($_POST['mymessage']); } ?></textarea>
+									<textarea name="mymessage" id="mymessage" class="form-control textarea-box" placeholder="<?php _e('Description of your project','zerif-lite'); ?>"><?php if(isset($_POST['mymessage'])) { echo esc_html($_POST['mymessage']); } ?></textarea>
 								</div>
 
 								<?php
-								$zerif_contactus_button_label = get_theme_mod('zerif_contactus_button_label',__('Send Message','zerif-lite'));
+								$zerif_contactus_button_label = get_theme_mod('zerif_contactus_button_label',__('Submit Project','zerif-lite'));
 								if( !empty($zerif_contactus_button_label) ):
 									echo '<button class="btn btn-primary custom-button red-btn" type="submit" data-scrollreveal="enter left after 0s over 1s">'.$zerif_contactus_button_label.'</button>';
 								endif;
