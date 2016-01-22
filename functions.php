@@ -1187,4 +1187,4 @@ require get_template_directory().'/inc/project.php';
 /**
  * Extends the JSON API for registration
  */
-require_once ('json-api-extend/json-api-extend.php');
+require_once('json-api-extend/json-api-extend.php');

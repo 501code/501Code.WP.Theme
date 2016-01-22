@@ -1773,7 +1773,7 @@ ul.nav > li.current_page_item.current > a:before {
 }
 #carousel-homepage-latestnews .glyphicon-chevron-right:before{
 	content: "";
-	background: url(images/right-arrow.png) no-repeat center center;	
+	background: url(images/right-arrow.png) no-repeat center center;
 	width: 30px;
 	height: 30px;
 	float: left;

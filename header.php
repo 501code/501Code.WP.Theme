@@ -75,61 +75,13 @@ wp_head(); ?>
 
 		<div class="container">
 
-			<div class="navbar-header responsive-logo">
+				<div class="logo_text row-fluid"">
+					<div class="col-lg-10"><h2>&lt;/501code&gt;</h2></div>
+					<div class="col-lg-2"><?php github_login();?></div>
+				</div>
 
-				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 
-				<span class="sr-only"><?php _e('Toggle navigation','zerif-lite'); ?></span>
 
-				<span class="icon-bar"></span>
-
-				<span class="icon-bar"></span>
-
-				<span class="icon-bar"></span>
-
-				</button>
-
-				<?php
-					/*
-					$zerif_logo = get_theme_mod('zerif_logo');
-
-					if(isset($zerif_logo) && $zerif_logo != ""):
-
-						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-
-							echo '<img src="'.$zerif_logo.'" alt="'.get_bloginfo('title').'">';
-
-						echo '</a>';
-
-					else:
-
-						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-						
-							if( file_exists(get_stylesheet_directory()."/images/logo.png")):
-							
-								echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';
-							
-							else:
-								
-								echo '<img src="'.get_template_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';
-								
-							endif;
-
-						echo '</a>';
-
-					endif;*/
-
-				?>
-				<h2 class="logo_text">&lt;/501&gt;</h2>
-
-			</div>
-
-			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation"   id="site-navigation">
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'zerif-lite' ); ?></a>
-				<?php
-					github_login();
-				?>
-			</nav>
 
 		</div>
 
