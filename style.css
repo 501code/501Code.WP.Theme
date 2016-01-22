@@ -5737,3 +5737,6 @@ body.custom-background {
 	width: 100%;
     color: #666;
 }
+.focus-box p{
+	text-align: justify !important;
+}

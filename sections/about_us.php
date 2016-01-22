@@ -19,7 +19,9 @@
 			<!-- COLUMN 1 - BIG MESSAGE ABOUT THE COMPANY-->
 
 			<div class="col-lg-6 col-md-6 column zerif-rtl-big-title">
-				<div class="big-intro" data-scrollreveal="enter left after 0s over 1s" data-sr-init="true" data-sr-complete="true">Volunteer developers meet Non-Profits.</div>
+				<div class="big-intro" data-scrollreveal="enter left after 0s over 1s" data-sr-init="true" data-sr-complete="true">Volunteer developers meet Non-Profits.
+				<img src="<?php print get_template_directory_uri()?>/images/coder.png" style="width: 350px;">
+				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 column zerif_about_us_center" data-scrollreveal="enter bottom after 0s over 1s" data-sr-init="true" data-sr-complete="true">
 
