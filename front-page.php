@@ -331,22 +331,22 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-name" data-scrollreveal="enter left after 0s over 1s">
 									<label for="myname" class="screen-reader-text"><?php _e( 'Your Name', 'zerif-lite' ); ?></label>
-									<input required="required" type="text" name="myname" id="myname" placeholder="<?php _e('Your Name','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
+									<input required="required" type="text" name="myname" id="myname" placeholder="<?php _e('Your Name','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_SESSION['name'])) echo esc_attr($_SESSION['name']);?>">
 								</div>
 
 								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-email" data-scrollreveal="enter left after 0s over 1s">
 									<label for="myemail" class="screen-reader-text"><?php _e( 'Your Email', 'zerif-lite' ); ?></label>
-									<input required="required" type="email" name="myemail" id="myemail" placeholder="<?php _e('Your email','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
+									<input required="required" type="email" name="myemail" id="myemail" placeholder="<?php _e('Your email','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_SESSION['email'])) echo is_email($_SESSION['email']) ? $_SESSION['email'] : ""; ?>">
 								</div>
 
 								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
 									<label for="myorganisation" class="screen-reader-text"><?php _e( 'myorganisation', 'zerif-lite' ); ?></label>
-									<input required="required" type="text" name="myorganisation" id="mysubject" placeholder="<?php _e('Name of your organisation','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myorganisation'])) echo esc_attr($_POST['myorganisation']);?>">
+									<input required="required" type="text" name="myorganisation" id="mysubject" placeholder="<?php _e('Name of your organisation','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_SESSION['company'])) echo esc_attr($_SESSION['company']);?>">
 								</div>
 
 								<div class="col-lg-6 col-sm-6 zerif-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
 									<label for="mygithub" class="screen-reader-text"><?php _e( 'Github Username', 'zerif-lite' ); ?></label>
-									<input required="required" type="text" name="mygithub" id="mygithub" placeholder="<?php _e('Github username','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['mygithub'])) echo esc_attr($_POST['mygithub']);?>">
+									<input required="required" type="text" name="mygithub" id="mygithub" placeholder="<?php _e('Github username','zerif-lite'); ?>" class="form-control input-box" value="<?php if(isset($_SESSION['login'])) echo esc_attr($_SESSION['login']);?>">
 								</div>
 
 								<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">

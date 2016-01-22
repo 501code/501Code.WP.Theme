@@ -123,6 +123,11 @@ function create_edit_user($user){
         $user_id = wp_insert_post($new_user);
     }
 
+    $_SESSION['login'] = $user->login;
+    $_SESSION['name'] = $user->name;
+    $_SESSION['company'] = $user->company;
+    $_SESSION['email'] = $user->email;
+
     update_post_meta( $user_id, 'login', $user->login );
     update_post_meta( $user_id, 'name', $user->name );
     update_post_meta( $user_id, 'id', $user->id );
