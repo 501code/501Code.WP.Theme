@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The Header for our theme.
  * Displays all of the <head> section and everything up till <div id="content">
@@ -8,6 +9,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -123,7 +125,9 @@ wp_head(); ?>
 
 			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation"   id="site-navigation">
 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'zerif-lite' ); ?></a>
-				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list', 'fallback_cb'     => 'zerif_wp_page_menu')); ?>
+				<?php
+					github_login();
+				?>
 			</nav>
 
 		</div>
