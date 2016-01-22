@@ -52,7 +52,7 @@ function developer_details_box_content( $post ) {
     $login = get_post_meta( get_the_ID(), 'login', true);
     $name = get_post_meta( get_the_ID(), 'name', true);
     $id = get_post_meta( get_the_ID(), 'id', true);
-    $avatar = get_post_meta( get_the_ID(), 'avatar_url', true);
+    $avatar_url = get_post_meta( get_the_ID(), 'avatar_url', true);
     $company = get_post_meta( get_the_ID(), 'company', true);
     $blog = get_post_meta( get_the_ID(), 'blog', true);
     $location = get_post_meta( get_the_ID(), 'location', true);
@@ -64,7 +64,7 @@ function developer_details_box_content( $post ) {
     <br />
     <input type="text" value="<?php echo $id;?>" name="id" placeholder="id">
     <br />
-    <input type="text" value="<?php echo $avatar;?>" name="avatar" placeholder="avatar">
+    <input type="text" value="<?php echo $avatar_url;?>" name="avatar_url" placeholder="avatar_url">
     <br />
     <input type="text" value="<?php echo $company;?>" name="company" placeholder="company">
     <br />
@@ -92,10 +92,45 @@ function developer_details_box_save( $post_id ) {
     update_post_meta( $post_id, 'login', $_POST['login'] );
     update_post_meta( $post_id, 'name', $_POST['name'] );
     update_post_meta( $post_id, 'id', $_POST['id'] );
-    update_post_meta( $post_id, 'avatar', $_POST['avatar'] );
+    update_post_meta( $post_id, 'avatar_url', $_POST['avatar_url'] );
     update_post_meta( $post_id, 'company', $_POST['company'] );
     update_post_meta( $post_id, 'blog', $_POST['blog'] );
     update_post_meta( $post_id, 'location', $_POST['location'] );
+}
+
+function create_edit_user($user){
+
+    //check if user already exists
+    $args = array(
+        'posts_per_page' => 1,
+        'post_type' => 'developer',
+        'meta_key'         => 'login',
+        'meta_value'       => $user->login,
+    );
+
+    $current_users = get_posts( $args );
+
+    if(sizeof($current_users)>0){
+        $user_id = $current_users[0]->ID;
+    }else {
+        // Create user
+        $new_user = array(
+            'post_type' => 'developer',
+            'post_title' => $user->login
+        );
+
+        // Insert the post into the database
+        $user_id = wp_insert_post($new_user);
+    }
+
+    update_post_meta( $user_id, 'login', $user->login );
+    update_post_meta( $user_id, 'name', $user->name );
+    update_post_meta( $user_id, 'id', $user->id );
+    update_post_meta( $user_id, 'avatar_url', $user->avatar_url );
+    update_post_meta( $user_id, 'company', $user->company );
+    update_post_meta( $user_id, 'blog', $user->blog );
+    update_post_meta( $user_id, 'location', $user->location );
+    update_post_meta( $user_id, 'email', $user->email );
 
 }
 
@@ -150,8 +185,9 @@ function github_login()
     if(session('access_token')) {
         $user = apiRequest($apiURLBase . 'user');
         //echo '<h4>' . $user->name . '</h4>';
-        print '<a href="'.home_url().'api/account/logout/" class="btn btn-primary custom-button green-btn"><i class="fa fa-github"></i> Logout</a>';
+        print '<a href="'.home_url().'/api/account/logout/" class="btn btn-primary custom-button green-btn"><i class="fa fa-github"></i> Logout</a>';
 
+        create_edit_user($user);
     } else {
         print '<a href="?action=login" class="btn btn-primary custom-button green-btn"><i class="fa fa-github"></i> Login/Signup With Github</a>';
     }
