@@ -74,15 +74,10 @@ wp_head(); ?>
 	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
 
 		<div class="container">
-
-				<div class="logo_text row-fluid"">
-					<div class="col-lg-10"><h2>&lt;/501code&gt;</h2></div>
-					<div class="col-lg-2"><?php github_login();?></div>
-				</div>
-
-
-
-
+			<div class="logo_text row-fluid">
+					<h2 style="display: inline-block;">&lt;/501code&gt;</h2>
+					<a href="?action=login" class="btn btn-primary green-btn" style="float: right;><i class="fa fa-github"></i> Login/Signup With Github</a>
+			</div>
 		</div>
 
 	</div>
