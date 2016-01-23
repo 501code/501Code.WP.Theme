@@ -31,7 +31,7 @@ class JSON_API_ACCOUNT_Controller {
         update_post_meta( $post_id, 'organisation',  $_POST['myorganisation'] );
         update_post_meta( $post_id, 'email',  $_POST['myemail'] );
 
-        wp_redirect(home_url()."/submitted");
+        wp_redirect(home_url()."?submitted");
         exit();
 
     }

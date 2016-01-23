@@ -102,13 +102,27 @@ function create_edit_user($user){
 
     //check if user already exists
     $args = array(
-        'posts_per_page' => 1,
-        'post_type' => 'developer',
-        'meta_key'         => 'login',
-        'meta_value'       => $user->login,
+        'posts_per_page'   => 1,
+        'offset'           => 0,
+        'category'         => '',
+        'category_name'    => '',
+        'orderby'          => 'date',
+        'order'            => 'DESC',
+        'include'          => '',
+        'exclude'          => '',
+        'meta_key'         => '',
+        'meta_value'       => '',
+        'post_type'        => 'developer',
+        'post_mime_type'   => '',
+        'post_parent'      => '',
+        'author'	   => '',
+        'post_status'      => 'draft',
+        'suppress_filters' => true
     );
 
-    $current_users = get_posts( $args );
+
+$current_users = get_posts( $args );
+
 
     if(sizeof($current_users)>0){
         $user_id = $current_users[0]->ID;
@@ -192,7 +206,7 @@ function github_login()
     if(session('access_token')) {
         $user = apiRequest($apiURLBase . 'user');
         //echo '<h4>' . $user->name . '</h4>';
-        print '<a href="'.home_url().'/api/account/logout/" class="btn btn-primary green-btn"><i class="fa fa-github"></i> Logout</a>';
+        print '<a href="'.home_url().'/api/account/logout/" class="btn btn-primary green-btn" style="float: right;"><i class="fa fa-github"></i> Logout</a>';
 
         create_edit_user($user);
     } else {

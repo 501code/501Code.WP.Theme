@@ -75,11 +75,16 @@ wp_head(); ?>
 
 		<div class="container">
 			<div class="logo_text row-fluid">
-					<h2 style="display: inline-block;">&lt;/501code&gt;</h2>
+					<h2 style="display: inline-block;"><a href="<?php echo home_url();?>">&lt;/501code&gt;</a></h2>
 					<?php
 						github_login();
 					?>
 			</div>
+			<?php
+				if(isset($_GET['submitted'])){
+					print '<div class="row-fluid alert alert-success" role="alert">Successfully submitted! You will be notified once your project has been reviewed!</div>';
+				}
+			?>
 		</div>
 
 	</div>
