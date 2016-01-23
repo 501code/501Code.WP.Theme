@@ -206,11 +206,11 @@ function github_login()
     if(session('access_token')) {
         $user = apiRequest($apiURLBase . 'user');
         //echo '<h4>' . $user->name . '</h4>';
-        print '<a href="'.home_url().'/api/account/logout/" class="btn btn-primary green-btn" style="float: right;"><i class="fa fa-github"></i> Logout</a>';
+        print '<a href="'.home_url().'/api/account/logout/" style="float: right;" class="tiny-link"><i class="fa fa-github"></i> Logout</a>';
 
         create_edit_user($user);
     } else {
-        print '<a href="?action=login" class="btn btn-primary green-btn" style="float: right;"><i class="fa fa-github"></i> Login/Signup With Github</a>';
+        print '<a href="?action=login"  style="float: right;" class="tiny-link"><i class="fa fa-github"></i> Login/Signup With Github</a>';
     }
 
 }

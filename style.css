@@ -5743,3 +5743,8 @@ body.custom-background {
 .logo_text{
 	padding: 15px;
 }
+.tiny-link{
+	color:grey;
+	padding: 12px;
+	font-size: 0.8em
+}
