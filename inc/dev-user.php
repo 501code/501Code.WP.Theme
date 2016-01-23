@@ -113,6 +113,8 @@ function create_edit_user($user){
     if(sizeof($current_users)>0){
         $user_id = $current_users[0]->ID;
     }else {
+
+        print '<div class="alert alert-success" role="alert">Successfully registered! You will recieve an email invitation in a few hours!</div>';
         // Create user
         $new_user = array(
             'post_type' => 'developer',
@@ -194,7 +196,7 @@ function github_login()
 
         create_edit_user($user);
     } else {
-        print '<a href="?action=login" class="btn btn-primary green-btn"><i class="fa fa-github"></i> Login/Signup With Github</a>';
+        print '<a href="?action=login" class="btn btn-primary green-btn" style="float: right;"><i class="fa fa-github"></i> Login/Signup With Github</a>';
     }
 
 }

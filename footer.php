@@ -14,8 +14,8 @@
 
 	<?php
 		$footer_sections = 0;
-		$zerif_address = get_theme_mod('zerif_address',__('Everywhere','zerif-lite'));
-		$zerif_address_icon = get_theme_mod('zerif_address_icon',get_template_directory_uri().'/images/map25-redish.png');
+		$zerif_address = get_theme_mod('zerif_address',__('<a href="http://github.com/501code">Github Account</a>','zerif-lite'));
+		$zerif_address_icon = get_theme_mod('zerif_address_icon',get_template_directory_uri().'/images/github.png');
 		
 		$zerif_email = get_theme_mod('zerif_email','<a href="mailto:info@501code.org">info@501code.org</a>');
 		$zerif_email_icon = get_theme_mod('zerif_email_icon',get_template_directory_uri().'/images/envelope4-green.png');

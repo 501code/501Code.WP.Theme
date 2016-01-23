@@ -76,7 +76,9 @@ wp_head(); ?>
 		<div class="container">
 			<div class="logo_text row-fluid">
 					<h2 style="display: inline-block;">&lt;/501code&gt;</h2>
-					<a href="?action=login" class="btn btn-primary green-btn" style="float: right;><i class="fa fa-github"></i> Login/Signup With Github</a>
+					<?php
+						github_login();
+					?>
 			</div>
 		</div>
 
