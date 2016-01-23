@@ -64,7 +64,7 @@
 		if( !empty($zerif_address) ):
 			echo '<div class="'.$footer_class.' company-details">';
 				echo '<div class="icon-top red-text">';
-					if( !empty($zerif_address_icon) ) echo '<img src="'.esc_url($zerif_address_icon).'" alt="" />';
+					if( !empty($zerif_address_icon) ) echo '<i class="fa fa-github"></i>';
 				echo '</div>';
 				echo $zerif_address;
 			echo '</div>';
@@ -77,7 +77,7 @@
 			echo '<div class="'.$footer_class.' company-details">';
 				echo '<div class="icon-top green-text">';
 					
-					if( !empty($zerif_email_icon) ) echo '<img src="'.esc_url($zerif_email_icon).'" alt="" />';
+					if( !empty($zerif_email_icon) ) echo '<i class="fa fa-envelope"></i>';
 				echo '</div>';
 				echo $zerif_email;
 			echo '</div>';
@@ -89,7 +89,7 @@
 		if( !empty($zerif_phone) ):
 			echo '<div class="'.$footer_class.' company-details">';
 				echo '<div class="icon-top blue-text">';
-					if( !empty($zerif_phone_icon) ) echo '<img src="'.esc_url($zerif_phone_icon).'" alt="" />';
+					if( !empty($zerif_phone_icon) ) echo '<i class="fa fa-twitter"></i>';
 				echo '</div>';
 				echo $zerif_phone;
 			echo '</div>';
