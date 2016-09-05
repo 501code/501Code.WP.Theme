@@ -71,7 +71,7 @@
 
 											echo '<div class="latestnews-img">';
 											
-												echo '<a class="latestnews-img-a" href="'.get_permalink().'" title="'.get_the_title().'">';
+												echo '<a class="latestnews-img-a" href="'.get_post_meta(get_the_ID(), 'url', true).'" target="_blank" title="'.get_the_title().'">';
 
 													if ( has_post_thumbnail() ) :
 														the_post_thumbnail();
@@ -85,7 +85,7 @@
 
 											echo '<div class="latesnews-content">';
 
-												echo '<h3 class="latestnews-title"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h3>';
+												echo '<h3 class="latestnews-title"><a href="'.get_post_meta(get_the_ID(), 'url', true).'" target="_blank" title="'.get_the_title().'">'.get_the_title().'</a></h3>';
 
 												the_excerpt();
 
@@ -105,7 +105,7 @@
 									echo '<div class="item '.$active.'">';
 										echo '<div class="col-md-3 latestnews-box">';
 											echo '<div class="latestnews-img">';
-												echo '<a class="latestnews-img-a" href="'.get_permalink().'" title="'.get_the_title().'">';
+												echo '<a class="latestnews-img-a" href="'.get_post_meta(get_the_ID(), 'url', true).'" target="_blank" title="'.get_the_title().'">';
 													if ( has_post_thumbnail() ) :
 														the_post_thumbnail();
 													else:
